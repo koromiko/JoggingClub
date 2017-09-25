@@ -1,0 +1,62 @@
+BCSymbolMap Version: 2.0
+-[SAMKeychainQuery save:]
+-[SAMKeychainQuery deleteItem:]
+-[SAMKeychainQuery fetchAll:]
+-[SAMKeychainQuery fetch:]
+-[SAMKeychainQuery setPasswordObject:]
+-[SAMKeychainQuery passwordObject]
+-[SAMKeychainQuery setPassword:]
+-[SAMKeychainQuery password]
++[SAMKeychainQuery isSynchronizationAvailable]
+-[SAMKeychainQuery query]
++[SAMKeychainQuery errorWithCode:]
+___34+[SAMKeychainQuery errorWithCode:]_block_invoke
+-[SAMKeychainQuery account]
+-[SAMKeychainQuery setAccount:]
+-[SAMKeychainQuery service]
+-[SAMKeychainQuery setService:]
+-[SAMKeychainQuery label]
+-[SAMKeychainQuery setLabel:]
+-[SAMKeychainQuery passwordData]
+-[SAMKeychainQuery setPasswordData:]
+-[SAMKeychainQuery accessGroup]
+-[SAMKeychainQuery setAccessGroup:]
+-[SAMKeychainQuery synchronizationMode]
+-[SAMKeychainQuery setSynchronizationMode:]
+-[SAMKeychainQuery .cxx_destruct]
+_errorWithCode:.onceToken
+_errorWithCode:.resourcesBundle
+___block_descriptor_tmp
+___block_literal_global
+_OBJC_IVAR_$_SAMKeychainQuery._account
+_OBJC_IVAR_$_SAMKeychainQuery._service
+_OBJC_IVAR_$_SAMKeychainQuery._label
+_OBJC_IVAR_$_SAMKeychainQuery._passwordData
+_OBJC_IVAR_$_SAMKeychainQuery._accessGroup
+_OBJC_IVAR_$_SAMKeychainQuery._synchronizationMode
+Apple LLVM version 8.0.0 (clang-800.0.38)
+/Users/soffes/Code/soffes/SAMKeychain/Sources/SAMKeychainQuery.m
+/Users/soffes/Code/soffes/SAMKeychain
+/Users/soffes/Code/soffes/SAMKeychain/Sources/SAMKeychainQuery.h
+__34+[SAMKeychainQuery errorWithCode:]_block_invoke
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/usr/include/dispatch/once.h
++[SAMKeychain passwordForService:account:]
++[SAMKeychain passwordForService:account:error:]
++[SAMKeychain passwordDataForService:account:]
++[SAMKeychain passwordDataForService:account:error:]
++[SAMKeychain deletePasswordForService:account:]
++[SAMKeychain deletePasswordForService:account:error:]
++[SAMKeychain setPassword:forService:account:]
++[SAMKeychain setPassword:forService:account:error:]
++[SAMKeychain setPasswordData:forService:account:]
++[SAMKeychain setPasswordData:forService:account:error:]
++[SAMKeychain allAccounts]
++[SAMKeychain allAccounts:]
++[SAMKeychain accountsForService:]
++[SAMKeychain accountsForService:error:]
++[SAMKeychain accessibilityType]
++[SAMKeychain setAccessibilityType:]
+_SAMKeychainAccessibilityType
+/Users/soffes/Code/soffes/SAMKeychain/Sources/SAMKeychain.m
+/Users/soffes/Library/Developer/Xcode/DerivedData/SAMKeychain-gswyriozawpxopdrdjkzsgmpddgg/Build/Intermediates/SAMKeychain.build/Release-watchos/SAMKeychain-watchOS.build/DerivedSources/SAMKeychain_vers.c

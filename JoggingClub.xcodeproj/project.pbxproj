@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B546D3441F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */; };
+		B546D3461F77BA0400BCD6BD /* JogEventStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546D3451F77BA0400BCD6BD /* JogEventStorageService.swift */; };
+		B5D29E771F6CCA3800670493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E761F6CCA3800670493 /* AppDelegate.swift */; };
+		B5D29E791F6CCA3800670493 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E781F6CCA3800670493 /* ViewController.swift */; };
+		B5D29E7C1F6CCA3800670493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D29E7A1F6CCA3800670493 /* Main.storyboard */; };
+		B5D29E7F1F6CCA3800670493 /* JoggingClub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E7D1F6CCA3800670493 /* JoggingClub.xcdatamodeld */; };
+		B5D29E811F6CCA3800670493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D29E801F6CCA3800670493 /* Assets.xcassets */; };
+		B5D29E841F6CCA3800670493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D29E821F6CCA3800670493 /* LaunchScreen.storyboard */; };
+		B5D29E8F1F6CCA3800670493 /* JoggingClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E8E1F6CCA3800670493 /* JoggingClubTests.swift */; };
+		B5EB0B191F7787240027636D /* SAMKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EB0B171F7787240027636D /* SAMKeychain.framework */; };
+		B5EB0B1A1F7787240027636D /* SAMKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5EB0B171F7787240027636D /* SAMKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5EB0B1B1F7787240027636D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EB0B181F7787240027636D /* Alamofire.framework */; };
+		B5EB0B1C1F7787240027636D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5EB0B181F7787240027636D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5EB0B221F77880A0027636D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B211F77880A0027636D /* User.swift */; };
+		B5EB0B241F7788170027636D /* JogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B231F7788170027636D /* JogEvent.swift */; };
+		B5EB0B261F77895B0027636D /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B251F77895B0027636D /* UserModelTests.swift */; };
+		B5EB0B281F77896A0027636D /* JoggingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B271F77896A0027636D /* JoggingModelTests.swift */; };
+		B5EB0B2E1F778C010027636D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B2D1F778C010027636D /* StorageService.swift */; };
+		B5EB0B321F778FED0027636D /* UserStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B311F778FED0027636D /* UserStorageServiceTests.swift */; };
+		B5EB0B351F77B1660027636D /* StubHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B341F77B1660027636D /* StubHelper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5D29E8B1F6CCA3800670493 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5D29E6B1F6CCA3700670493 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5D29E721F6CCA3700670493;
+			remoteInfo = JoggingClub;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B50595C81F76CAC1000C9AA5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5EB0B1A1F7787240027636D /* SAMKeychain.framework in Embed Frameworks */,
+				B5EB0B1C1F7787240027636D /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B50595C91F76CAF9000C9AA5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogEventStorageServiceTests.swift; sourceTree = "<group>"; };
+		B546D3451F77BA0400BCD6BD /* JogEventStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogEventStorageService.swift; sourceTree = "<group>"; };
+		B5D29E731F6CCA3800670493 /* JoggingClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D29E761F6CCA3800670493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5D29E781F6CCA3800670493 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5D29E7B1F6CCA3800670493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5D29E7E1F6CCA3800670493 /* JoggingClub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JoggingClub.xcdatamodel; sourceTree = "<group>"; };
+		B5D29E801F6CCA3800670493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5D29E831F6CCA3800670493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5D29E851F6CCA3800670493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5D29E8A1F6CCA3800670493 /* JoggingClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggingClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D29E8E1F6CCA3800670493 /* JoggingClubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggingClubTests.swift; sourceTree = "<group>"; };
+		B5D29E901F6CCA3800670493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5EB0B171F7787240027636D /* SAMKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAMKeychain.framework; path = Carthage/Build/iOS/SAMKeychain.framework; sourceTree = "<group>"; };
+		B5EB0B181F7787240027636D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		B5EB0B211F77880A0027636D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B5EB0B231F7788170027636D /* JogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogEvent.swift; sourceTree = "<group>"; };
+		B5EB0B251F77895B0027636D /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
+		B5EB0B271F77896A0027636D /* JoggingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggingModelTests.swift; sourceTree = "<group>"; };
+		B5EB0B2D1F778C010027636D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		B5EB0B311F778FED0027636D /* UserStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageServiceTests.swift; sourceTree = "<group>"; };
+		B5EB0B341F77B1660027636D /* StubHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubHelper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5D29E701F6CCA3700670493 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5EB0B191F7787240027636D /* SAMKeychain.framework in Frameworks */,
+				B5EB0B1B1F7787240027636D /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D29E871F6CCA3800670493 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5D29E6A1F6CCA3700670493 = {
+			isa = PBXGroup;
+			children = (
+				B5EB0B181F7787240027636D /* Alamofire.framework */,
+				B5EB0B171F7787240027636D /* SAMKeychain.framework */,
+				B5D29E751F6CCA3800670493 /* JoggingClub */,
+				B5D29E8D1F6CCA3800670493 /* JoggingClubTests */,
+				B5D29E741F6CCA3800670493 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5D29E741F6CCA3800670493 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5D29E731F6CCA3800670493 /* JoggingClub.app */,
+				B5D29E8A1F6CCA3800670493 /* JoggingClubTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5D29E751F6CCA3800670493 /* JoggingClub */ = {
+			isa = PBXGroup;
+			children = (
+				B5EB0B201F7787AA0027636D /* Model */,
+				B5EB0B1E1F7787670027636D /* Module */,
+				B5EB0B1D1F77875F0027636D /* Service */,
+				B5D29E761F6CCA3800670493 /* AppDelegate.swift */,
+				B5D29E781F6CCA3800670493 /* ViewController.swift */,
+				B5D29E7A1F6CCA3800670493 /* Main.storyboard */,
+				B5D29E801F6CCA3800670493 /* Assets.xcassets */,
+				B5D29E821F6CCA3800670493 /* LaunchScreen.storyboard */,
+				B5D29E851F6CCA3800670493 /* Info.plist */,
+				B5D29E7D1F6CCA3800670493 /* JoggingClub.xcdatamodeld */,
+			);
+			path = JoggingClub;
+			sourceTree = "<group>";
+		};
+		B5D29E8D1F6CCA3800670493 /* JoggingClubTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5D29E8E1F6CCA3800670493 /* JoggingClubTests.swift */,
+				B5D29E901F6CCA3800670493 /* Info.plist */,
+				B5EB0B251F77895B0027636D /* UserModelTests.swift */,
+				B5EB0B271F77896A0027636D /* JoggingModelTests.swift */,
+				B5EB0B311F778FED0027636D /* UserStorageServiceTests.swift */,
+				B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */,
+				B5EB0B341F77B1660027636D /* StubHelper.swift */,
+			);
+			path = JoggingClubTests;
+			sourceTree = "<group>";
+		};
+		B5EB0B1D1F77875F0027636D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B5EB0B2D1F778C010027636D /* StorageService.swift */,
+				B546D3451F77BA0400BCD6BD /* JogEventStorageService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B5EB0B1E1F7787670027636D /* Module */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		B5EB0B201F7787AA0027636D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5EB0B211F77880A0027636D /* User.swift */,
+				B5EB0B231F7788170027636D /* JogEvent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5D29E721F6CCA3700670493 /* JoggingClub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5D29E931F6CCA3800670493 /* Build configuration list for PBXNativeTarget "JoggingClub" */;
+			buildPhases = (
+				B5D29E6F1F6CCA3700670493 /* Sources */,
+				B5D29E701F6CCA3700670493 /* Frameworks */,
+				B5D29E711F6CCA3700670493 /* Resources */,
+				B50595C81F76CAC1000C9AA5 /* Embed Frameworks */,
+				B50595C91F76CAF9000C9AA5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JoggingClub;
+			productName = JoggingClub;
+			productReference = B5D29E731F6CCA3800670493 /* JoggingClub.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5D29E891F6CCA3800670493 /* JoggingClubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5D29E961F6CCA3800670493 /* Build configuration list for PBXNativeTarget "JoggingClubTests" */;
+			buildPhases = (
+				B5D29E861F6CCA3800670493 /* Sources */,
+				B5D29E871F6CCA3800670493 /* Frameworks */,
+				B5D29E881F6CCA3800670493 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5D29E8C1F6CCA3800670493 /* PBXTargetDependency */,
+			);
+			name = JoggingClubTests;
+			productName = JoggingClubTests;
+			productReference = B5D29E8A1F6CCA3800670493 /* JoggingClubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5D29E6B1F6CCA3700670493 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = ST.Huang;
+				TargetAttributes = {
+					B5D29E721F6CCA3700670493 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					B5D29E891F6CCA3800670493 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B5D29E721F6CCA3700670493;
+					};
+				};
+			};
+			buildConfigurationList = B5D29E6E1F6CCA3700670493 /* Build configuration list for PBXProject "JoggingClub" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5D29E6A1F6CCA3700670493;
+			productRefGroup = B5D29E741F6CCA3800670493 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5D29E721F6CCA3700670493 /* JoggingClub */,
+				B5D29E891F6CCA3800670493 /* JoggingClubTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5D29E711F6CCA3700670493 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D29E841F6CCA3800670493 /* LaunchScreen.storyboard in Resources */,
+				B5D29E811F6CCA3800670493 /* Assets.xcassets in Resources */,
+				B5D29E7C1F6CCA3800670493 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D29E881F6CCA3800670493 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5D29E6F1F6CCA3700670493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5EB0B221F77880A0027636D /* User.swift in Sources */,
+				B5EB0B2E1F778C010027636D /* StorageService.swift in Sources */,
+				B546D3461F77BA0400BCD6BD /* JogEventStorageService.swift in Sources */,
+				B5D29E791F6CCA3800670493 /* ViewController.swift in Sources */,
+				B5D29E771F6CCA3800670493 /* AppDelegate.swift in Sources */,
+				B5D29E7F1F6CCA3800670493 /* JoggingClub.xcdatamodeld in Sources */,
+				B5EB0B241F7788170027636D /* JogEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D29E861F6CCA3800670493 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B546D3441F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift in Sources */,
+				B5EB0B351F77B1660027636D /* StubHelper.swift in Sources */,
+				B5EB0B261F77895B0027636D /* UserModelTests.swift in Sources */,
+				B5EB0B321F778FED0027636D /* UserStorageServiceTests.swift in Sources */,
+				B5D29E8F1F6CCA3800670493 /* JoggingClubTests.swift in Sources */,
+				B5EB0B281F77896A0027636D /* JoggingModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5D29E8C1F6CCA3800670493 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5D29E721F6CCA3700670493 /* JoggingClub */;
+			targetProxy = B5D29E8B1F6CCA3800670493 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5D29E7A1F6CCA3800670493 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D29E7B1F6CCA3800670493 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5D29E821F6CCA3800670493 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5D29E831F6CCA3800670493 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5D29E911F6CCA3800670493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5D29E921F6CCA3800670493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5D29E941F6CCA3800670493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK675VM357;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = JoggingClub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShihTing-Huang.JoggingClub";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5D29E951F6CCA3800670493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK675VM357;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = JoggingClub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShihTing-Huang.JoggingClub";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5D29E971F6CCA3800670493 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK675VM357;
+				INFOPLIST_FILE = JoggingClubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShihTing-Huang.JoggingClubTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoggingClub.app/JoggingClub";
+			};
+			name = Debug;
+		};
+		B5D29E981F6CCA3800670493 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HK675VM357;
+				INFOPLIST_FILE = JoggingClubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ShihTing-Huang.JoggingClubTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoggingClub.app/JoggingClub";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5D29E6E1F6CCA3700670493 /* Build configuration list for PBXProject "JoggingClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D29E911F6CCA3800670493 /* Debug */,
+				B5D29E921F6CCA3800670493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5D29E931F6CCA3800670493 /* Build configuration list for PBXNativeTarget "JoggingClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D29E941F6CCA3800670493 /* Debug */,
+				B5D29E951F6CCA3800670493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5D29E961F6CCA3800670493 /* Build configuration list for PBXNativeTarget "JoggingClubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D29E971F6CCA3800670493 /* Debug */,
+				B5D29E981F6CCA3800670493 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5D29E7D1F6CCA3800670493 /* JoggingClub.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5D29E7E1F6CCA3800670493 /* JoggingClub.xcdatamodel */,
+			);
+			currentVersion = B5D29E7E1F6CCA3800670493 /* JoggingClub.xcdatamodel */;
+			path = JoggingClub.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B5D29E6B1F6CCA3700670493 /* Project object */;
+}
