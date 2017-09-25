@@ -1,1 +1,13 @@
-# JoggingClub is an app that makes jog a fun experience, leads you to a better life.
+# JoggingClub 
+
+JoggingClub is a service that makes jog a fun experience.
+
+
+
+
+
+
+## Change log 
+
+* Firebase embeded via Cocoapods (use ':complete' in Podfile)
+* 

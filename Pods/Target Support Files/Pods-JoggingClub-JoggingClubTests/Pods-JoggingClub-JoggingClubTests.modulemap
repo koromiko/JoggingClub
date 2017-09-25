@@ -1,0 +1,6 @@
+framework module Pods_JoggingClub_JoggingClubTests {
+  umbrella header "Pods-JoggingClub-JoggingClubTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
