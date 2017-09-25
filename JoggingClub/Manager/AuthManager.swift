@@ -11,6 +11,14 @@ import Firebase
 
 protocol FirebaseAuthProtocol {
     func createUser(withEmail email: String, password: String, completion: AuthResultCallback? )
+    func signIn(withEmail email: String, password: String, completion: AuthResultCallback? )
+}
+
+enum AuthError {
+    case unknowmError
+    case accountAlreadyExists
+    case accountNotExists
+    case wrongPassword
 }
 
 class AuthManager {
@@ -20,7 +28,7 @@ class AuthManager {
     
     init(auth: FirebaseAuthProtocol) {
         self.auth = auth
-        
+
     }
     
     convenience init(){
@@ -28,17 +36,30 @@ class AuthManager {
     }
     
     //MARK: Account login/signup
-    func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ token: String?)->() ) {
+    func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ token: String?, _ error: AuthError? )->() ) {
         auth.createUser(withEmail: email, password: password) { (user, error) in
             if let token = user?.refreshToken {
-                complete( true, token )
+                complete( true, token, nil )
             }else {
-                complete( false, nil )
+                complete( false, nil, AuthError.unknowmError )
             }
         }
     }
 
+    func logIn( email:String, password: String, complete: @escaping ( _ success: Bool, _ token: String?, _ error: AuthError? )->() ) {
+        auth.signIn(withEmail: email, password: password) { (user, error) in
+            if let token = user?.refreshToken {
+                complete( true, token, nil )
+            }else{
+                complete( false, nil, AuthError.unknowmError)
+            }
+        }
+    }
+    
     //MARK: Auth add/remove/edit/query
+    
+    
+    
     
 }
 

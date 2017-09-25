@@ -38,7 +38,7 @@ class AuthManagerTests: XCTestCase {
         
         let expect = XCTestExpectation(description: "Call back was calledd")
         
-        sut!.sighUp( email: email, password: password ) { (success: Bool, token: String?) in
+        sut!.sighUp( email: email, password: password ) { (success: Bool, token: String?, error: AuthError? ) in
             expect.fulfill()
         }
         
@@ -50,19 +50,62 @@ class AuthManagerTests: XCTestCase {
         
     }
     
+    func test_login_success() {
+        //Given correct email & password
+        let email = "neo@abc.edf"
+        let password = "123456"
+        
+        // When login
+        
+        let expect = XCTestExpectation(description: "Login callback should get called ")
+        
+        sut!.logIn(email: email, password: password, complete: { (success, token, error) in
+            expect.fulfill()
+        })
+        
+        // Assert: Login to firebase should called
+        XCTAssertTrue( mockAuth!.isLoginCalled )
+        
+        // Assert: Call back should be called
+        wait(for: [expect], timeout: 0.5)
+
+    }
+    
+    
+    func test_user_logout() {
+        
+        // Given a loggded in user
+        
+        
+        // When logout
+        
+        
+        // Assert: DB flush get called
+        
+        
+        
+        
+        
+    }
+    
+    
     
     
     
 }
 
-
-
 class MockAuth: FirebaseAuthProtocol {
     var isCreateUserCalled: Bool = false
+    var isLoginCalled = false
     
     func createUser(withEmail email: String, password: String, completion: AuthResultCallback?) {
         isCreateUserCalled = true
         completion!(nil,nil)
+    }
+    
+    func signIn(withEmail email: String, password: String, completion: AuthResultCallback?) {
+        isLoginCalled = true
+        completion!(nil, nil)
     }
 }
 
