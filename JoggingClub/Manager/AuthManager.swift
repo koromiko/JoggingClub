@@ -15,6 +15,14 @@ protocol FirebaseAuthProtocol {
     func signOut() throws
 }
 
+protocol AuthManagerProtocol {
+    var isLoggedIn: Bool { get set }
+    
+    func logIn( email:String, password: String, complete: @escaping ( _ success: Bool, _ token: String?, _ error: AuthError? )->() )
+    func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ token: String?, _ error: AuthError? )->() )
+    func logout()
+}
+
 enum AuthError {
     case unknowmError
     case accountAlreadyExists
@@ -22,14 +30,15 @@ enum AuthError {
     case wrongPassword
 }
 
-class AuthManager {
+class AuthManager: AuthManagerProtocol {
+    var isLoggedIn: Bool = false
+    
     
     // Dependency for auth methods in Firebase
     let auth: FirebaseAuthProtocol
     
     init(auth: FirebaseAuthProtocol) {
         self.auth = auth
-
     }
     
     convenience init(){
