@@ -33,21 +33,7 @@
                     <view key="view" contentMode="scaleToFill" id="yPJ-hf-4og">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pic-kb-Gyy">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <connections>
-                                    <segue destination="34z-s8-mZu" kind="embed" id="vNo-lW-9sz"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dcv-yo-Q8x" firstAttribute="trailing" secondItem="Pic-kb-Gyy" secondAttribute="trailing" id="COI-Cf-sqZ"/>
-                            <constraint firstItem="dcv-yo-Q8x" firstAttribute="bottom" secondItem="Pic-kb-Gyy" secondAttribute="bottom" id="Kef-MP-zta"/>
-                            <constraint firstItem="Pic-kb-Gyy" firstAttribute="leading" secondItem="dcv-yo-Q8x" secondAttribute="leading" id="hmD-0v-OAD"/>
-                            <constraint firstItem="Pic-kb-Gyy" firstAttribute="top" secondItem="dcv-yo-Q8x" secondAttribute="top" id="kFn-yn-V7z"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dcv-yo-Q8x"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Sh7-If-BwM"/>
@@ -73,20 +59,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upM-oz-R3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1246" y="-169"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="T8b-As-meN">
-            <objects>
-                <viewController id="34z-s8-mZu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lTS-BY-e3A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5nb-tP-Sf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="591" y="-477"/>
         </scene>
     </scenes>
 </document>

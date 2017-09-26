@@ -18,8 +18,8 @@ protocol FirebaseAuthProtocol {
 protocol AuthManagerProtocol {
     var isLoggedIn: Bool { get set }
     
-    func logIn( email:String, password: String, complete: @escaping ( _ success: Bool, _ token: String?, _ error: AuthError? )->() )
-    func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ token: String?, _ error: AuthError? )->() )
+    func logIn( email:String, password: String, complete: @escaping ( _ success: Bool, _ error: AuthError? )->() )
+    func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ error: AuthError? )->() )
     func logout()
 }
 
@@ -37,6 +37,8 @@ class AuthManager: AuthManagerProtocol {
     // Dependency for auth methods in Firebase
     let auth: FirebaseAuthProtocol
     
+    var token: String?
+    
     init(auth: FirebaseAuthProtocol) {
         self.auth = auth
     }
@@ -46,22 +48,24 @@ class AuthManager: AuthManagerProtocol {
     }
     
     //MARK: Account login/signup
-    func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ token: String?, _ error: AuthError? )->() ) {
+    func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ error: AuthError? )->() ) {
         auth.createUser(withEmail: email, password: password) { (user, error) in
             if let token = user?.refreshToken {
-                complete( true, token, nil )
+                self.token = token
+                complete( true, nil )
             }else {
-                complete( false, nil, AuthError.unknowmError )
+                complete( false, AuthError.unknowmError )
             }
         }
     }
 
-    func logIn( email:String, password: String, complete: @escaping ( _ success: Bool, _ token: String?, _ error: AuthError? )->() ) {
+    func logIn( email:String, password: String, complete: @escaping ( _ success: Bool, _ error: AuthError? )->() ) {
         auth.signIn(withEmail: email, password: password) { (user, error) in
             if let token = user?.refreshToken {
-                complete( true, token, nil )
+                self.token = token
+                complete( true, nil )
             }else{
-                complete( false, nil, AuthError.unknowmError)
+                complete( false, AuthError.unknowmError)
             }
         }
     }
