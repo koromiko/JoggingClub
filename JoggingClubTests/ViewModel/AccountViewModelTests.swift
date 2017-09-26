@@ -165,6 +165,7 @@ class AccountViewModelTests: XCTestCase {
         
         //Assert dismiss
         XCTAssertTrue( mockViewController!.isDismissedCalled )
+
     }
     
 }

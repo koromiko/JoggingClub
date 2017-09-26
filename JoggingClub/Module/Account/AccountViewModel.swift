@@ -84,7 +84,7 @@ class AccountViewModel {
     func signupComplete() {
         self.delegate?.dismiss()
     }
-    
+
     //MARK: Private text
     private func titleForState( state: AccountViewState ) -> String {
         switch state {
