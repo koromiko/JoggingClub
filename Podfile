@@ -9,10 +9,11 @@ target 'JoggingClub' do
   
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-
+  pod 'Alamofire', '~> 4.5'
+  pod 'OHHTTPStubs/Swift'
   target 'JoggingClubTests' do
     inherit! :complete
-    # Pods for testing
+    
   end
 
 end

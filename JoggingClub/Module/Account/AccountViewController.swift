@@ -18,12 +18,34 @@ protocol AccountViewControllerDelegate: class {
 
 class AccountViewController: UIViewController, AccountViewControllerDelegate {
     
-    let viewModel: AccountViewModel? = nil
+    lazy var viewModel: AccountViewModel = {
+        return AccountViewModel(auth: AuthManager(), delegate: self)
+    }()
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var accountTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var submitBtn: UIButton!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    @IBOutlet weak var segmentView: UISegmentedControl!
+    
+    @IBAction func segmentValueChanged(_ sender: Any) {
+        if self.segmentView.selectedSegmentIndex == 0 {
+            viewModel.userClickLoginButton()
+        }else {
+            viewModel.userClickSignUpButton()
+        }
+    }
+    
+    @IBAction func submitBtnPressed(_ sender: Any) {
+        viewModel.email = self.accountTextField.text
+        viewModel.password = self.passwordTextField.text
+        viewModel.userClickSubmit()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        viewModel.viewIsReady()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,19 +53,31 @@ class AccountViewController: UIViewController, AccountViewControllerDelegate {
     }
     
     func setTitle(title: String) {
-        
+        DispatchQueue.main.async {
+            self.titleLabel.text = title
+        }
     }
     
     func setSubmitButtonTitle(title: String) {
-        
+        DispatchQueue.main.async {
+            self.submitBtn.setTitle(title, for: UIControlState.normal)
+        }
     }
     
     func setLoading(isLoading: Bool) {
-        
+        DispatchQueue.main.async {
+            if isLoading {
+                self.loadingView.startAnimating()
+            }else {
+                self.loadingView.stopAnimating()
+            }
+        }
     }
     
     func setButtonEnabled(isEnabled: Bool) {
-        
+        DispatchQueue.main.async {
+            self.submitBtn.isEnabled = isEnabled
+        }
     }
     
     func dismiss() {

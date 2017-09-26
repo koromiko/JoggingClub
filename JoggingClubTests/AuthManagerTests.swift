@@ -92,6 +92,8 @@ class MockAuth: FirebaseAuthProtocol {
     var isLoginCalled = false
     var isLogoutCalled = false
     
+    var token: String? = ""
+    
     func createUser(withEmail email: String, password: String, completion: AuthResultCallback?) {
         isCreateUserCalled = true
         completion!(nil,nil)

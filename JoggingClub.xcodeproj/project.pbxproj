@@ -15,18 +15,18 @@
 		B5317E5A1F7A2B0A00533D18 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5317E591F7A2B0A00533D18 /* AccountViewModel.swift */; };
 		B5317E5C1F7A319600533D18 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5317E5B1F7A319600533D18 /* AccountViewController.swift */; };
 		B5317E5F1F7A40EF00533D18 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5317E5E1F7A40EF00533D18 /* Account.storyboard */; };
+		B5317E611F7A5E8A00533D18 /* JogListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5317E601F7A5E8A00533D18 /* JogListViewModelTests.swift */; };
+		B5317E631F7A5FDD00533D18 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5317E621F7A5FDD00533D18 /* APIService.swift */; };
+		B5317E651F7A603C00533D18 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5317E641F7A603C00533D18 /* APIServiceTests.swift */; };
+		B5317E681F7A7DAB00533D18 /* jogEvent.json in Resources */ = {isa = PBXBuildFile; fileRef = B5317E671F7A7DAB00533D18 /* jogEvent.json */; };
 		B546D3441F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */; };
-		B546D3461F77BA0400BCD6BD /* JogEventStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546D3451F77BA0400BCD6BD /* JogEventStorageService.swift */; };
 		B5D29E771F6CCA3800670493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E761F6CCA3800670493 /* AppDelegate.swift */; };
 		B5D29E7C1F6CCA3800670493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D29E7A1F6CCA3800670493 /* Main.storyboard */; };
 		B5D29E7F1F6CCA3800670493 /* JoggingClub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E7D1F6CCA3800670493 /* JoggingClub.xcdatamodeld */; };
 		B5D29E811F6CCA3800670493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D29E801F6CCA3800670493 /* Assets.xcassets */; };
 		B5D29E841F6CCA3800670493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D29E821F6CCA3800670493 /* LaunchScreen.storyboard */; };
-		B5D29E8F1F6CCA3800670493 /* JoggingClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E8E1F6CCA3800670493 /* JoggingClubTests.swift */; };
 		B5EB0B221F77880A0027636D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B211F77880A0027636D /* User.swift */; };
 		B5EB0B241F7788170027636D /* JogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B231F7788170027636D /* JogEvent.swift */; };
-		B5EB0B261F77895B0027636D /* UserModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B251F77895B0027636D /* UserModelTests.swift */; };
-		B5EB0B281F77896A0027636D /* JoggingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B271F77896A0027636D /* JoggingModelTests.swift */; };
 		B5EB0B2E1F778C010027636D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B2D1F778C010027636D /* StorageService.swift */; };
 		B5EB0B321F778FED0027636D /* UserStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B311F778FED0027636D /* UserStorageServiceTests.swift */; };
 		B5EB0B351F77B1660027636D /* StubHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB0B341F77B1660027636D /* StubHelper.swift */; };
@@ -69,8 +69,11 @@
 		B5317E591F7A2B0A00533D18 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		B5317E5B1F7A319600533D18 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B5317E5E1F7A40EF00533D18 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		B5317E601F7A5E8A00533D18 /* JogListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogListViewModelTests.swift; sourceTree = "<group>"; };
+		B5317E621F7A5FDD00533D18 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B5317E641F7A603C00533D18 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		B5317E671F7A7DAB00533D18 /* jogEvent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jogEvent.json; sourceTree = "<group>"; };
 		B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogEventStorageServiceTests.swift; sourceTree = "<group>"; };
-		B546D3451F77BA0400BCD6BD /* JogEventStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogEventStorageService.swift; sourceTree = "<group>"; };
 		B5CB31D81F78B75B008175B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5D29E731F6CCA3800670493 /* JoggingClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D29E761F6CCA3800670493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,12 +83,9 @@
 		B5D29E831F6CCA3800670493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5D29E851F6CCA3800670493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D29E8A1F6CCA3800670493 /* JoggingClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoggingClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5D29E8E1F6CCA3800670493 /* JoggingClubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggingClubTests.swift; sourceTree = "<group>"; };
 		B5D29E901F6CCA3800670493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EB0B211F77880A0027636D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5EB0B231F7788170027636D /* JogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogEvent.swift; sourceTree = "<group>"; };
-		B5EB0B251F77895B0027636D /* UserModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelTests.swift; sourceTree = "<group>"; };
-		B5EB0B271F77896A0027636D /* JoggingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoggingModelTests.swift; sourceTree = "<group>"; };
 		B5EB0B2D1F778C010027636D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		B5EB0B311F778FED0027636D /* UserStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageServiceTests.swift; sourceTree = "<group>"; };
 		B5EB0B341F77B1660027636D /* StubHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubHelper.swift; sourceTree = "<group>"; };
@@ -148,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				B5317E561F7A294B00533D18 /* AccountViewModelTests.swift */,
+				B5317E601F7A5E8A00533D18 /* JogListViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +169,14 @@
 				B5317E5E1F7A40EF00533D18 /* Account.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B5317E661F7A7D9200533D18 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				B5317E671F7A7DAB00533D18 /* jogEvent.json */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		B5CB31D71F78B74D008175B0 /* Support */ = {
@@ -219,15 +228,14 @@
 		B5D29E8D1F6CCA3800670493 /* JoggingClubTests */ = {
 			isa = PBXGroup;
 			children = (
-				B5D29E8E1F6CCA3800670493 /* JoggingClubTests.swift */,
+				B5317E661F7A7D9200533D18 /* Stubs */,
 				B5D29E901F6CCA3800670493 /* Info.plist */,
-				B5EB0B251F77895B0027636D /* UserModelTests.swift */,
-				B5EB0B271F77896A0027636D /* JoggingModelTests.swift */,
 				B5EB0B311F778FED0027636D /* UserStorageServiceTests.swift */,
 				B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */,
 				B51F231F1F78DF8400CD9109 /* AuthManagerTests.swift */,
 				B5317E551F7A292100533D18 /* ViewModel */,
 				B5EB0B341F77B1660027636D /* StubHelper.swift */,
+				B5317E641F7A603C00533D18 /* APIServiceTests.swift */,
 			);
 			path = JoggingClubTests;
 			sourceTree = "<group>";
@@ -236,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				B5EB0B2D1F778C010027636D /* StorageService.swift */,
-				B546D3451F77BA0400BCD6BD /* JogEventStorageService.swift */,
+				B5317E621F7A5FDD00533D18 /* APIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5317E681F7A7DAB00533D18 /* jogEvent.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,14 +382,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JoggingClub/Pods-JoggingClub-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,14 +441,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JoggingClub-JoggingClubTests/Pods-JoggingClub-JoggingClubTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,11 +503,11 @@
 				B5EB0B221F77880A0027636D /* User.swift in Sources */,
 				B51F23241F78E16300CD9109 /* AuthManager.swift in Sources */,
 				B5EB0B2E1F778C010027636D /* StorageService.swift in Sources */,
-				B546D3461F77BA0400BCD6BD /* JogEventStorageService.swift in Sources */,
 				B5317E5A1F7A2B0A00533D18 /* AccountViewModel.swift in Sources */,
 				B5317E5C1F7A319600533D18 /* AccountViewController.swift in Sources */,
 				B5D29E771F6CCA3800670493 /* AppDelegate.swift in Sources */,
 				B5D29E7F1F6CCA3800670493 /* JoggingClub.xcdatamodeld in Sources */,
+				B5317E631F7A5FDD00533D18 /* APIService.swift in Sources */,
 				B5EB0B241F7788170027636D /* JogEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,10 +520,9 @@
 				B51F23201F78DF8400CD9109 /* AuthManagerTests.swift in Sources */,
 				B5317E571F7A294B00533D18 /* AccountViewModelTests.swift in Sources */,
 				B5EB0B351F77B1660027636D /* StubHelper.swift in Sources */,
-				B5EB0B261F77895B0027636D /* UserModelTests.swift in Sources */,
+				B5317E651F7A603C00533D18 /* APIServiceTests.swift in Sources */,
 				B5EB0B321F778FED0027636D /* UserStorageServiceTests.swift in Sources */,
-				B5D29E8F1F6CCA3800670493 /* JoggingClubTests.swift in Sources */,
-				B5EB0B281F77896A0027636D /* JoggingModelTests.swift in Sources */,
+				B5317E611F7A5E8A00533D18 /* JogListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,7 +701,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD7BC0C0405FF83C84A40E14 /* Pods-JoggingClub-JoggingClubTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK675VM357;
@@ -703,7 +718,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B9954C8FC3AEF369D8A6B87 /* Pods-JoggingClub-JoggingClubTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HK675VM357;

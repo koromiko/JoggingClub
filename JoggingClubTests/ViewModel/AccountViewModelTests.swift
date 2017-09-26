@@ -41,6 +41,16 @@ class AccountViewModelTests: XCTestCase {
 
     }
     
+    func test_init_state(){
+        // Given a sut
+        
+        // When view is ready
+        sut!.viewIsReady()
+        
+        // Assert state is login
+        XCTAssertEqual(mockViewController?.pageTitle, "Login")
+    }
+    
     func test_state_change_loading() {
         // When state change to loading
         self.sut!.isLoading = true
@@ -74,10 +84,6 @@ class AccountViewModelTests: XCTestCase {
         
         // Assert submit button title
         XCTAssertEqual(self.mockViewController!.submitButtonTitle, "Signup" )
-    }
-    
-    func test_state_change_loaging() {
-        
     }
     
     func test_user_switch_to_signup() {

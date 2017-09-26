@@ -44,6 +44,8 @@ class AccountViewModel {
     func viewIsReady() {
         if auth.isLoggedIn {
             delegate?.dismiss()
+        }else {
+            self.state = AccountViewState.login
         }
     }
     

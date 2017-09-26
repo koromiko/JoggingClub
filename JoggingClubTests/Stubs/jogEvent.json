@@ -1,0 +1,17 @@
+ [
+  {
+  "date": 123,
+  "distance": 900,
+  "duration": 1000
+  },
+  {
+  "date": 1506428204,
+  "distance": 1000,
+  "duration": 1800
+  },
+  {
+  "date": 1506255782,
+  "distance": 3700,
+  "duration": 1900
+  }
+  ]

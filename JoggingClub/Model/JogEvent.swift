@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct JogEvent {
+struct JogEvent: Codable {
     let distance: Float
     let duration: Int
     let date: Date
+    
 }
