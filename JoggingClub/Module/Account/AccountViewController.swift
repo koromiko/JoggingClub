@@ -10,10 +10,14 @@ import UIKit
 
 protocol AccountViewControllerDelegate: class {
     func dismiss()
+    func setTitle( title: String )
+    func setSubmitButtonTitle( title: String )
+    func setLoading( isLoading: Bool )
+    func setButtonEnabled( isEnabled: Bool )
 }
 
 class AccountViewController: UIViewController, AccountViewControllerDelegate {
-
+    
     let viewModel: AccountViewModel? = nil
     
     override func viewDidLoad() {
@@ -24,6 +28,22 @@ class AccountViewController: UIViewController, AccountViewControllerDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setTitle(title: String) {
+        
+    }
+    
+    func setSubmitButtonTitle(title: String) {
+        
+    }
+    
+    func setLoading(isLoading: Bool) {
+        
+    }
+    
+    func setButtonEnabled(isEnabled: Bool) {
+        
     }
     
     func dismiss() {

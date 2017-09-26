@@ -38,7 +38,7 @@ class AuthManagerTests: XCTestCase {
         
         let expect = XCTestExpectation(description: "Call back was calledd")
         
-        sut!.sighUp( email: email, password: password ) { (success: Bool, token: String?, error: AuthError? ) in
+        sut!.sighUp( email: email, password: password ) { (success: Bool, error: AuthError? ) in
             expect.fulfill()
         }
         
@@ -59,7 +59,7 @@ class AuthManagerTests: XCTestCase {
         
         let expect = XCTestExpectation(description: "Login callback should get called ")
         
-        sut!.logIn(email: email, password: password, complete: { (success, token, error) in
+        sut!.logIn(email: email, password: password, complete: { (success, error) in
             expect.fulfill()
         })
         
