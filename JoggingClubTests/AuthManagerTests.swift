@@ -73,19 +73,12 @@ class AuthManagerTests: XCTestCase {
     
     
     func test_user_logout() {
-        
-        // Given a loggded in user
-        
-        
+        // Given a sut
         // When logout
+        sut!.logout()
         
-        
-        // Assert: DB flush get called
-        
-        
-        
-        
-        
+        // Assert: firebase logout get called
+        XCTAssertTrue(mockAuth!.isLogoutCalled)
     }
     
     
@@ -97,6 +90,7 @@ class AuthManagerTests: XCTestCase {
 class MockAuth: FirebaseAuthProtocol {
     var isCreateUserCalled: Bool = false
     var isLoginCalled = false
+    var isLogoutCalled = false
     
     func createUser(withEmail email: String, password: String, completion: AuthResultCallback?) {
         isCreateUserCalled = true
@@ -107,6 +101,11 @@ class MockAuth: FirebaseAuthProtocol {
         isLoginCalled = true
         completion!(nil, nil)
     }
+    
+    func signOut() throws {
+        isLogoutCalled = true
+    }
+    
 }
 
 

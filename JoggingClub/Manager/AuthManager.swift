@@ -12,6 +12,7 @@ import Firebase
 protocol FirebaseAuthProtocol {
     func createUser(withEmail email: String, password: String, completion: AuthResultCallback? )
     func signIn(withEmail email: String, password: String, completion: AuthResultCallback? )
+    func signOut() throws
 }
 
 enum AuthError {
@@ -54,6 +55,10 @@ class AuthManager {
                 complete( false, nil, AuthError.unknowmError)
             }
         }
+    }
+    
+    func logout() {
+        try? auth.signOut()
     }
     
     //MARK: Auth add/remove/edit/query
