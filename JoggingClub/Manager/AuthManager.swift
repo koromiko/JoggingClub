@@ -17,10 +17,19 @@ protocol FirebaseAuthProtocol {
 
 protocol AuthManagerProtocol {
     var isLoggedIn: Bool { get set }
+    var authType: AuthType { get set }
+    var uid: String? { get set }
+    var account: String? { get set }
     
     func logIn( email:String, password: String, complete: @escaping ( _ success: Bool, _ error: AuthError? )->() )
     func sighUp( email: String, password: String, complete: @escaping (_ success: Bool, _ error: AuthError? )->() )
     func logout()
+}
+
+enum AuthType: Int {
+    case general = 1
+    case manager = 2
+    case administrator = 3
 }
 
 enum AuthError {
@@ -31,13 +40,22 @@ enum AuthError {
 }
 
 class AuthManager: AuthManagerProtocol {
+    
+    
     var isLoggedIn: Bool = false
     
+    var uid: String?
+    var account: String?
+    var authType: AuthType = AuthType.general
     
     // Dependency for auth methods in Firebase
     let auth: FirebaseAuthProtocol
     
     var token: String?
+    
+    var loggedInUser: User?
+    
+    
     
     init(auth: FirebaseAuthProtocol) {
         self.auth = auth

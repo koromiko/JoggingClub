@@ -28,12 +28,15 @@ class APIServiceTests: XCTestCase {
     
     func test_fetch_jog_list() {
         
-        // given a stub with 3 event
+        // given a stub with n event
+        let json: Any = StubHelper().loadJSONResource(name: "jogEvent")
+        let jsonArray = json as! [Any]
+        
         // when fetch jog event
         let expect = XCTestExpectation(description: "jog event callback")
         
-        sut!.fetchJogEvent(complete: { (success, events, error) in
-            XCTAssertEqual(events.count, 3)
+        sut!.fetchJogEvent(authType: AuthType.general, complete: { (success, events, error) in
+            XCTAssertEqual(events.count, jsonArray.count)
             expect.fulfill()
         })
         
@@ -60,7 +63,7 @@ class APIServiceTests: XCTestCase {
 extension APIServiceTests {
     func initStubs(){
         
-        stub(condition: isPath( "/\(APIPath.jogEvent)") ) { (_) -> OHHTTPStubsResponse in
+        stub(condition: isPath( "/\(APIPath.jogEventForGeneralUser)") ) { (_) -> OHHTTPStubsResponse in
             let stubPath = OHPathForFile("jogEvent.json", type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
         }
@@ -70,7 +73,4 @@ extension APIServiceTests {
         OHHTTPStubs.removeAllStubs()
     }
 }
-
-
-
 

@@ -13,8 +13,8 @@ import CoreData
 class JogEventStorageServiceTests: XCTestCase {
     
     var sut: JogEventStorageService?
-    lazy var stubHelper: StubHelper = {
-        return StubHelper<JoggingClub.JogEventEntify>(container: self.mockPersistantContainer, entityName: "JogEventEntify")
+    lazy var stubHelper: StorageStubHelper = {
+        return StorageStubHelper<JoggingClub.JogEventEntify>(container: self.mockPersistantContainer, entityName: "JogEventEntify")
     }()
     
     override func setUp() {

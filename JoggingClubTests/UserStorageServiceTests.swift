@@ -13,19 +13,19 @@ import CoreData
 class UserStorageServiceTests: XCTestCase {
     
     var sut: UserStorageService?
-    lazy var stubsHelper: StubHelper = {
-        return StubHelper<JoggingClub.UserEntity>(container: self.mockPersistantContainer, entityName: "UserEntity")
+    lazy var stubsHelper: StorageStubHelper = {
+        return StorageStubHelper<JoggingClub.UserEntity>(container: self.mockPersistantContainer, entityName: "UserEntity")
     }()
     
     override func setUp() {
         super.setUp()
         sut = UserStorageService(container: mockPersistantContainer)
         stubsHelper.initStubs(stubs: [
-            [ "name": "u1", "rule": UserRule.general.rawValue ],
-            [ "name": "u2", "rule": UserRule.administrator.rawValue ],
-            [ "name": "u3", "rule": UserRule.manager.rawValue ],
-            [ "name": "u4", "rule": UserRule.general.rawValue ],
-            [ "name": "u5", "rule": UserRule.general.rawValue ]
+            [ "name": "u1", "rule": AuthType.general.rawValue ],
+            [ "name": "u2", "rule": AuthType.administrator.rawValue ],
+            [ "name": "u3", "rule": AuthType.manager.rawValue ],
+            [ "name": "u4", "rule": AuthType.general.rawValue ],
+            [ "name": "u5", "rule": AuthType.general.rawValue ]
             ])
     }
     
@@ -41,7 +41,7 @@ class UserStorageServiceTests: XCTestCase {
         
         // Give a user name & rule
         let username = "first_user@gmail.com"
-        let rule = UserRule.general
+        let rule = AuthType.general
         
         let numberOfUsersBeforeInsert = stubsHelper.numberOfItemsInPersistentStore()
         

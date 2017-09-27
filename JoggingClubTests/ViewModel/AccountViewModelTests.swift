@@ -206,28 +206,3 @@ class MockAccountViewController: AccountViewControllerDelegate {
     }
 }
 
-class MockAuthManager: AuthManagerProtocol {
-    
-    var isLoggedIn: Bool = false
-    
-    var isLoginGetCalled: Bool = false
-    var isSignUpCalled: Bool = false
-    var submittedEmail: String?
-    var submittedPassword: String?
-    
-    func sighUp(email: String, password: String, complete: @escaping (Bool, AuthError?) -> ()) {
-        isSignUpCalled = true
-        submittedEmail = email
-        submittedPassword = password
-    }
-    
-    func logIn(email: String, password: String, complete: @escaping (Bool, AuthError?) -> ()) {
-        isLoginGetCalled = true
-        submittedEmail = email
-        submittedPassword = password
-    }
-    
-    func logout() {
-        
-    }
-}

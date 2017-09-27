@@ -46,7 +46,7 @@ class StorageService {
 
 class UserStorageService: StorageService {
     //MARK: User CRUD
-    func addUser(_ name: String, _ rule: UserRule ) -> UserEntity? {
+    func addUser(_ name: String, _ rule: AuthType ) -> UserEntity? {
         if let obj = NSEntityDescription.insertNewObject(forEntityName: "UserEntity", into: backgroundContext) as? UserEntity {
             obj.name = name
             obj.rule = Int16(rule.rawValue)
@@ -61,7 +61,7 @@ class UserStorageService: StorageService {
         backgroundContext.delete(obj)
     }
     
-    func editUser( objID: NSManagedObjectID, name: String?, rule: UserRule? ) {
+    func editUser( objID: NSManagedObjectID, name: String?, rule: AuthType? ) {
         if let obj = backgroundContext.object(with: objID) as? UserEntity {
             if name != nil {
                 obj.name = name

@@ -14,18 +14,34 @@ enum APIHost {
 }
 
 enum APIPath {
-    static let jogEvent = "jog_event.json"
+    static let jogEventForGeneralUser = "jog_event.json"
+    static let jogEventForManager = "jog_event.json"
+    static let jogEventForAdministrator = "jog_event.json"
 }
 
 enum APIError {
     case unknownError (String)
 }
 
-class APIService {
-    
-    func fetchJogEvent( complete: @escaping (_ success: Bool, _ jogEvents: [JogEvent], _ error: APIError? )->() ) {
+protocol APIServiceProtocol {
+    func fetchJogEvent( authType: AuthType, complete: @escaping (_ success: Bool, _ jogEvents: [JogEvent], _ error: APIError? )->() )
+}
 
-        Alamofire.request( APIHost.base.appending(APIPath.jogEvent) ).responseData { (response) in
+class APIService: APIServiceProtocol {
+    
+    func fetchJogEvent( authType: AuthType, complete: @escaping (_ success: Bool, _ jogEvents: [JogEvent], _ error: APIError? )->() ) {
+        
+        var url: String = APIHost.base
+        switch authType {
+        case .general:
+            url.append( APIPath.jogEventForGeneralUser )
+        case .manager:
+            url.append( APIPath.jogEventForManager )
+        case .administrator:
+            url.append( APIPath.jogEventForAdministrator )
+        }
+        
+        Alamofire.request( url ).responseData { (response) in
             
             if let data = response.result.value {
                 

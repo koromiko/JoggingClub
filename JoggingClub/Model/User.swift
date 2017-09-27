@@ -8,14 +8,8 @@
 
 import Foundation
 
-enum UserRule: Int {
-    case general = 0
-    case manager = 1
-    case administrator = 2
-}
-
 struct User {
-    let name: String
-    let rule: UserRule
-    
+    let id: String
+    let account: String
+    let rule: AuthType
 }

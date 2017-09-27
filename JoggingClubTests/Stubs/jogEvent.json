@@ -2,16 +2,41 @@
   {
   "date": 123,
   "distance": 900,
-  "duration": 1000
+  "duration": 1000,
+  "user": {
+  "account": "administrator@abc.def",
+  "authType": 3,
+  "id": "3"
+  }
   },
   {
   "date": 1506428204,
   "distance": 1000,
-  "duration": 1800
+  "duration": 1800,
+  "user": {
+  "account": "manager@abc.def",
+  "authType": 2,
+  "id": "2"
+  }
   },
   {
   "date": 1506255782,
   "distance": 3700,
-  "duration": 1900
+  "duration": 1900,
+  "user": {
+  "account": "user@abc.def",
+  "authType": 1,
+  "id": "1"
+  }
+  },
+  {
+  "date": 12345,
+  "distance": 890,
+  "duration": 1200,
+  "user": {
+  "account": "user@abc.def",
+  "authType": 1,
+  "id": "1"
+  }
   }
   ]

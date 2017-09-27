@@ -9,8 +9,15 @@
 import Foundation
 
 struct JogEvent: Codable {
+    struct User: Codable {
+        let id: String
+        let account: String
+        let authType: Int
+    }
     let distance: Float
     let duration: Int
     let date: Date
+    let user: User
+    
     
 }
