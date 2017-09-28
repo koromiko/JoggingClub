@@ -16,8 +16,8 @@ struct JogDetailDisplayItem {
     let dateText: String
     
     init( event: JogEvent ) {
-        distanceText = String( format: "%.1f m", event.distance )
-        durationText = String( format: "%d s", event.duration )
+        distanceText = String( format: "%.1f", event.distance )
+        durationText = String( format: "%d", event.duration )
         usernameText = event.user.account
         switch event.user.authType {
         case AuthType.general.rawValue:
@@ -47,11 +47,24 @@ enum JogDetailViewMode {
 class JogDetailViewModel {
     
     weak var delegate: JogDetailViewControllerProtocol?
-    var api: APIServiceProtocol?
     
+    var api: APIServiceProtocol
     var mode: JogDetailViewMode = JogDetailViewMode.add
+    var auth: AuthManagerProtocol
     
-    private let event: JogEvent?
+    var isLoading: Bool = false {
+        didSet {
+            self.delegate?.updateLoadingState( isLoading: isLoading)
+        }
+    }
+
+    var event: JogEvent? {
+        didSet {
+            if let event = self.event {
+                self.displayItem = JogDetailDisplayItem(event: event)
+            }
+        }
+    }
 
     var displayItem: JogDetailDisplayItem? {
         didSet {
@@ -59,22 +72,74 @@ class JogDetailViewModel {
         }
     }
     
-    init(api: APIServiceProtocol = APIService(), event: JogEvent?, mode: JogDetailViewMode) {
+    init( api: APIServiceProtocol = APIService(),
+          authManager: AuthManagerProtocol = AuthManager(),
+          mode: JogDetailViewMode ) {
         self.api = api
-        self.event = event
         self.mode = mode
+        self.auth = authManager
     }
     
     func viewIsReady() {
-        if mode == JogDetailViewMode.edit {
-            if let event = event {
-                self.displayItem = JogDetailDisplayItem(event: event)
+        if mode == JogDetailViewMode.add {
+            guard let uid = auth.uid, let account = auth.account else {
+                return
             }
+            
+            let user = JogEvent.User(id: uid, account: account, authType: auth.authType.rawValue)
+            let event = JogEvent(distance: 0.0, duration: 0, date: Date(), user: user, id: nil)
+            self.event = event
         }
     }
     
-    func userClickDone() {
+    func userClickDone( inputDistance: String, inputDuration: String, inputDate: Date ) {
         
+        // Check data avaliability
+        guard let distance = Float(inputDistance), let duration = Int(inputDuration) else {
+            self.delegate?.showError(message: "Please fill in data")
+            return
+        }
+        
+        if distance == 0.0 || duration == 0 {
+            self.delegate?.showError(message: "Please input valid data")
+            return
+        }
+        
+        if mode == JogDetailViewMode.add {
+            
+            guard let uid = auth.uid, let account = auth.account else {
+                self.delegate?.showError(message: "User not logged in!")
+                return
+            }
+            
+            let user = JogEvent.User(id: uid, account: account, authType: auth.authType.rawValue)
+            
+            let event = JogEvent(distance: distance, duration: duration, date: inputDate, user: user, id: nil)
+            isLoading = true
+            api.add(event, complete: { [weak self] (success) in
+                self?.isLoading = false
+                if success {
+                    self?.delegate?.leave()
+                }else {
+                    self?.delegate?.showError(message: "Add Event Error!")
+                }
+            })
+            
+            
+        }else if mode == JogDetailViewMode.edit {
+            guard let event = event else {
+                fatalError("Inject Event Error")
+            }
+            
+            let editedEvent = JogEvent(distance: distance, duration: duration, date: inputDate, user: event.user, id: event.id! )
+
+            isLoading = true
+            api.edit( editedEvent, complete: { [weak self] (success) in
+                self?.isLoading = false
+                self?.delegate?.leave()
+            })
+        
+        }
     }
     
 }

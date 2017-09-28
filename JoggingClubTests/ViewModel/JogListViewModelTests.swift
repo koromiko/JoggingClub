@@ -134,6 +134,11 @@ class MockAPIService: APIServiceProtocol {
     var isGeneralFetchCalled = false
     var isManagerFetchCalled = false
     var isAdministratorCalled = false
+    var isEditCalled = false
+    var isRemoveCalled = false
+    var isAddCalled = false
+    
+    var submittedEvent: JogEvent?
     
     func fetchJogEvent(authType: AuthType, complete: @escaping (Bool, [JogEvent], APIError?) -> ()) {
         switch authType {
@@ -144,6 +149,21 @@ class MockAPIService: APIServiceProtocol {
         case .administrator:
             isAdministratorCalled = true
         }
+    }
+    
+    func add(_ event: JogEvent, complete: @escaping (Bool) -> ()) {
+        isAddCalled = true
+        submittedEvent = event
+    }
+    
+    func edit(_ event: JogEvent, complete: @escaping (Bool) -> ()) {
+        isEditCalled = true
+        submittedEvent = event
+    }
+    
+    func remove(_ event: JogEvent, complete: @escaping (Bool) -> ()) {
+        isRemoveCalled = true
+        submittedEvent = event
     }
     
 }

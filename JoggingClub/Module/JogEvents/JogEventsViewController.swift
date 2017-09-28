@@ -17,6 +17,9 @@ class JogEventsViewController: UIViewController, JogEventsViewControllerProtocol
     
     @IBOutlet weak var tableView: UITableView!
 
+    
+    
+    
     lazy var viewModel: JogEventsViewModel = {
         return JogEventsViewModel(api: APIService(), authManager: AuthManager())
     }()

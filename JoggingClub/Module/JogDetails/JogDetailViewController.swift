@@ -9,6 +9,9 @@
 import UIKit
 protocol JogDetailViewControllerProtocol: class {
     func updateView()
+    func updateLoadingState( isLoading: Bool )
+    func leave()
+    func showError(message: String)
 }
 
 class JogDetailViewController: UIViewController, JogDetailViewControllerProtocol {
@@ -21,6 +24,18 @@ class JogDetailViewController: UIViewController, JogDetailViewControllerProtocol
     }
     
     func updateView() {
+        
+    }
+    
+    func updateLoadingState(isLoading: Bool) {
+        
+    }
+    
+    func leave() {
+
+    }
+    
+    func showError(message: String) {
         
     }
     

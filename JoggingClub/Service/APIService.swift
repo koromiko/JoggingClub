@@ -28,6 +28,9 @@ enum APIError {
 
 protocol APIServiceProtocol {
     func fetchJogEvent( authType: AuthType, complete: @escaping (_ success: Bool, _ jogEvents: [JogEvent], _ error: APIError? )->() )
+    func add( _ event: JogEvent, complete: @escaping (_ success: Bool)->() )
+    func remove( _ event: JogEvent, complete: @escaping (_ success: Bool )->() )
+    func edit( _ event: JogEvent, complete: @escaping (_ success: Bool )->() )
 }
 
 class APIService: APIServiceProtocol {
