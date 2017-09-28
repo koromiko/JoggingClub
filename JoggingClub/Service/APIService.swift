@@ -18,6 +18,8 @@ enum APIPath {
     static let jogEventForManager = "jog_event.json"
     static let jogEventForAdministrator = "jog_event.json"
     static let jogEventAdd = "jog_event.json"
+    static let jogEventDelete = "jog_event"
+    static let jogEventEdit = "jog_event"
 }
 
 enum APIError {
@@ -84,10 +86,43 @@ class APIService: APIServiceProtocol {
             
             
         }
+    }
+    
+    func remove( _ event: JogEvent, complete: @escaping (_ success: Bool )->() ) {
         
+        guard let eventID = event.id else {
+            complete(false)
+            return
+        }
+
+        let url = "\(APIHost.base)\(APIPath.jogEventDelete)/\(eventID).json"
         
+        Alamofire.request(url, method: .delete, parameters: nil).responseJSON { ( response ) in
+            if response.result.isSuccess {
+                complete(true)
+            }else {
+                complete(false)
+            }
+        }
+
+    }
+    
+    func edit( _ event: JogEvent, complete: @escaping (_ success: Bool )->() ) {
         
+        guard let eventID = event.id else {
+            complete(false)
+            return
+        }
         
+        let url = "\(APIHost.base)\(APIPath.jogEventEdit)/\(eventID).json"
+        
+        Alamofire.request(url, method: .put, parameters: nil).responseJSON { ( response ) in
+            if response.result.isSuccess {
+                complete(true)
+            }else {
+                complete(false)
+            }
+        }
     }
     
 }

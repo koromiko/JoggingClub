@@ -55,8 +55,8 @@ class StubHelper {
         let user = JogEvent.User( id: userObj["id"] as! String,
                                   account: userObj["account"] as! String,
                                   authType: userObj["authType"] as! Int )
-        
-        let date = Date(timeIntervalSince1970: TimeInterval( value["date"] as! Int ))
+        let ticks = value["date"] as! Double
+        let date = Date(timeIntervalSince1970: ticks/10_000_000 - 62_135_596_800 )
         
         return JogEvent( distance: distance,
                          duration: duration,

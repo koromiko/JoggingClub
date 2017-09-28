@@ -18,7 +18,7 @@ struct JogEvent: Codable {
     let duration: Int
     let date: Date
     let user: User
-    let id: String
+    let id: String?
 }
 
 struct JogEvents: Codable {

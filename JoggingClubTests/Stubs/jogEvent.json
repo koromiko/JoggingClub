@@ -1,82 +1,52 @@
 {
-    "0": {
-        "date": 1506428204,
-        "distance": 900,
+    "-Kv574GL1fMecEFG6J2A": {
+        "date": 528255358.884996,
+        "distance": 2000,
         "duration": 1000,
         "user": {
-            "account": "administrator@abc.def",
+            "account": "asd@wer.we",
             "authType": 3,
-            "id": "3"
+            "id": "6"
         }
     },
-    "1": {
-        "date": 1506428204,
-        "distance": 1000,
-        "duration": 1800,
-        "user": {
-            "account": "manager@abc.def",
-            "authType": 2,
-            "id": "2"
-        }
-    },
-    "2": {
-        "date": 1506255782,
-        "distance": 3700,
-        "duration": 1900,
-        "user": {
-            "account": "user@abc.def",
-            "authType": 1,
-            "id": "1"
-        }
-    },
-    "3": {
-        "date": 1506494008,
-        "distance": 890,
-        "duration": 1200,
-        "user": {
-            "account": "user@abc.def",
-            "authType": 1,
-            "id": "1"
-        }
-    },
-    "-Kv1qaWAp66vkZEdSuXq": {
-        "date": 1506428202,
-        "distance": 1001,
-        "duration": 1801,
-        "user": {
-            "account": "manager@abc.def",
-            "authType": 2,
-            "id": "2"
-        }
-    },
-    "-Kv25YpH4uGOz4sD0kMW": {
-        "date": 1506428202,
-        "distance": 1001,
-        "duration": 1801,
-        "user": {
-            "account": "manager@abc.def",
-            "authType": 2,
-            "id": "2"
-        }
-    },
-    "-Kv26F1-30urz3LJpD1h": {
-        "date": 1506428202,
-        "distance": 1001,
-        "duration": 1801,
-        "user": {
-            "account": "manager@abc.def",
-            "authType": 2,
-            "id": "2"
-        }
-    },
-    "-Kv27dAMNuLUOUocRZJO": {
-        "date": 1506428205,
-        "distance": 900,
+    "-Kv58ZhR73oohxRym4EF": {
+        "date": 528255749.795172,
+        "distance": 2000,
         "duration": 1000,
         "user": {
-            "account": "administrator@abc.def",
+            "account": "asd@wer.we",
             "authType": 3,
-            "id": "3"
+            "id": "6"
+        }
+    },
+    "-Kv58h7hkIIpQ894XQj4": {
+        "date": 528255784.31148,
+        "distance": 2100,
+        "duration": 1100,
+        "user": {
+            "account": "asd@wer.we",
+            "authType": 3,
+            "id": "6"
+        }
+    },
+    "-Kv58lOsXNzAF4CZvyTb": {
+        "date": 528255801.806421,
+        "distance": 1200,
+        "duration": 1100,
+        "user": {
+            "account": "manager@wer.we",
+            "authType": 2,
+            "id": "2"
+        }
+    },
+    "-Kv58ooc6akLsMtfQCzl": {
+        "date": 528255815.775109,
+        "distance": 3200,
+        "duration": 2100,
+        "user": {
+            "account": "user@wer.we",
+            "authType": 1,
+            "id": "1"
         }
     }
 }
