@@ -17,6 +17,7 @@ enum APIPath {
     static let jogEventForGeneralUser = "jog_event.json"
     static let jogEventForManager = "jog_event.json"
     static let jogEventForAdministrator = "jog_event.json"
+    static let jogEventAdd = "jog_event.json"
 }
 
 enum APIError {
@@ -47,8 +48,9 @@ class APIService: APIServiceProtocol {
                 
                 let decoder = JSONDecoder()
                 do {
-                   let events = try decoder.decode([JogEvent].self, from: data)
-                    complete( true, events, nil )
+                   let events = try decoder.decode(JogEvents.self, from: data)
+                    
+                    complete( true, events.jogEvents, nil )
                 } catch {
                     complete( true, [JogEvent](), APIError.unknownError(error.localizedDescription) )
                 }
@@ -59,6 +61,33 @@ class APIService: APIServiceProtocol {
             
 
         }
+    }
+    
+    
+    func add( _ event: JogEvent, complete: @escaping (_ success: Bool)->() ) {
+        
+        let encoder = JSONEncoder()
+        if let paramData = try? encoder.encode(event) {
+            if let param = try? JSONSerialization.jsonObject(with: paramData, options: []) as? [String: Any] {
+                let url = String( format: "\(APIHost.base)\(APIPath.jogEventAdd)")
+                Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default )
+                    .validate()
+                    .responseJSON(completionHandler: { (response) in
+
+                        if response.result.isSuccess {
+                            complete( true )
+                        }else {
+                            complete( false )
+                        }
+                    })
+            }
+            
+            
+        }
+        
+        
+        
+        
     }
     
 }

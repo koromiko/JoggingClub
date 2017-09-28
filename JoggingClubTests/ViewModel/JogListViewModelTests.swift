@@ -39,9 +39,7 @@ class JogListViewModelTests: XCTestCase {
         mockAuthManager!.authType = AuthType.general
         mockAuthManager!.uid = "1"
         
-        let data: Data = StubHelper().loadJSONResource(name: "jogEvent")
-        let decoder = JSONDecoder()
-        let events = try! decoder.decode([JogEvent].self, from: data)
+        let events = StubHelper().loadStubJogEvents(name: "jogEvent")
         
         //When viewWillAppear
         sut!.updateEvents(events)
@@ -55,10 +53,7 @@ class JogListViewModelTests: XCTestCase {
         
         // Given events and ranges
         mockAuthManager?.authType = AuthType.administrator
-        
-        let data: Data = StubHelper().loadJSONResource(name: "jogEvent")
-        let decoder = JSONDecoder()
-        let events = try! decoder.decode([JogEvent].self, from: data)
+        let events = StubHelper().loadStubJogEvents(name: "jogEvent")
         
         let toDate = events.first!.date
         let fromDate = Calendar.current.date(byAdding: .hour, value: -2, to: toDate)!

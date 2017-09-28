@@ -25,6 +25,9 @@
 		B5317E721F7A900000533D18 /* MockAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5317E711F7A900000533D18 /* MockAuthManager.swift */; };
 		B5317E741F7B51FE00533D18 /* StubHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5317E731F7B51FE00533D18 /* StubHelper.swift */; };
 		B546D3441F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */; };
+		B58CFEDD1F7BA01B0051A448 /* JogDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CFEDC1F7BA01B0051A448 /* JogDetailViewModelTests.swift */; };
+		B58CFEE01F7BA2670051A448 /* JogDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CFEDF1F7BA2670051A448 /* JogDetailViewModel.swift */; };
+		B58CFEE21F7BA27F0051A448 /* JogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CFEE11F7BA27F0051A448 /* JogDetailViewController.swift */; };
 		B5D29E771F6CCA3800670493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E761F6CCA3800670493 /* AppDelegate.swift */; };
 		B5D29E7C1F6CCA3800670493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D29E7A1F6CCA3800670493 /* Main.storyboard */; };
 		B5D29E7F1F6CCA3800670493 /* JoggingClub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5D29E7D1F6CCA3800670493 /* JoggingClub.xcdatamodeld */; };
@@ -84,6 +87,9 @@
 		B5317E711F7A900000533D18 /* MockAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthManager.swift; sourceTree = "<group>"; };
 		B5317E731F7B51FE00533D18 /* StubHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubHelper.swift; sourceTree = "<group>"; };
 		B546D3431F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogEventStorageServiceTests.swift; sourceTree = "<group>"; };
+		B58CFEDC1F7BA01B0051A448 /* JogDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogDetailViewModelTests.swift; sourceTree = "<group>"; };
+		B58CFEDF1F7BA2670051A448 /* JogDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogDetailViewModel.swift; sourceTree = "<group>"; };
+		B58CFEE11F7BA27F0051A448 /* JogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogDetailViewController.swift; sourceTree = "<group>"; };
 		B5CB31D81F78B75B008175B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5D29E731F6CCA3800670493 /* JoggingClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D29E761F6CCA3800670493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			children = (
 				B5317E561F7A294B00533D18 /* AccountViewModelTests.swift */,
 				B5317E601F7A5E8A00533D18 /* JogListViewModelTests.swift */,
+				B58CFEDC1F7BA01B0051A448 /* JogDetailViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -205,6 +212,15 @@
 				B5317E711F7A900000533D18 /* MockAuthManager.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B58CFEDE1F7BA22F0051A448 /* JogDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B58CFEDF1F7BA2670051A448 /* JogDetailViewModel.swift */,
+				B58CFEE11F7BA27F0051A448 /* JogDetailViewController.swift */,
+			);
+			path = JogDetails;
 			sourceTree = "<group>";
 		};
 		B5CB31D71F78B74D008175B0 /* Support */ = {
@@ -282,6 +298,7 @@
 		B5EB0B1E1F7787670027636D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B58CFEDE1F7BA22F0051A448 /* JogDetails */,
 				B5317E691F7A8DFD00533D18 /* JogEvents */,
 				B5317E581F7A2AFC00533D18 /* Account */,
 			);
@@ -534,12 +551,14 @@
 			files = (
 				B5317E6D1F7A8E3300533D18 /* JogEventsViewController.swift in Sources */,
 				B5EB0B221F77880A0027636D /* User.swift in Sources */,
+				B58CFEE01F7BA2670051A448 /* JogDetailViewModel.swift in Sources */,
 				B51F23241F78E16300CD9109 /* AuthManager.swift in Sources */,
 				B5317E6B1F7A8E1700533D18 /* JogEventViewModel.swift in Sources */,
 				B5EB0B2E1F778C010027636D /* StorageService.swift in Sources */,
 				B5317E5A1F7A2B0A00533D18 /* AccountViewModel.swift in Sources */,
 				B5317E5C1F7A319600533D18 /* AccountViewController.swift in Sources */,
 				B5D29E771F6CCA3800670493 /* AppDelegate.swift in Sources */,
+				B58CFEE21F7BA27F0051A448 /* JogDetailViewController.swift in Sources */,
 				B5D29E7F1F6CCA3800670493 /* JoggingClub.xcdatamodeld in Sources */,
 				B5317E631F7A5FDD00533D18 /* APIService.swift in Sources */,
 				B5EB0B241F7788170027636D /* JogEvent.swift in Sources */,
@@ -550,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58CFEDD1F7BA01B0051A448 /* JogDetailViewModelTests.swift in Sources */,
 				B546D3441F77B9EB00BCD6BD /* JogEventStorageServiceTests.swift in Sources */,
 				B5317E741F7B51FE00533D18 /* StubHelper.swift in Sources */,
 				B51F23201F78DF8400CD9109 /* AuthManagerTests.swift in Sources */,

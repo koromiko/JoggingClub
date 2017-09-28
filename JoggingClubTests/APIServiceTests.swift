@@ -30,13 +30,13 @@ class APIServiceTests: XCTestCase {
         
         // given a stub with n event
         let json: Any = StubHelper().loadJSONResource(name: "jogEvent")
-        let jsonArray = json as! [Any]
+        let jsonDic = json as! [String: Any]
         
         // when fetch jog event
         let expect = XCTestExpectation(description: "jog event callback")
         
         sut!.fetchJogEvent(authType: AuthType.general, complete: { (success, events, error) in
-            XCTAssertEqual(events.count, jsonArray.count)
+            XCTAssertEqual(events.count, jsonDic.keys.count)
             expect.fulfill()
         })
         
@@ -45,6 +45,19 @@ class APIServiceTests: XCTestCase {
     
     func test_add_a_job_event() {
         
+        // Give a event
+        let event = StubHelper().loadEvent()
+        
+        let expect = XCTestExpectation(description: "add api is called")
+        
+        //When call add to api service
+        sut!.add( event ) { success in
+            expect.fulfill()
+            XCTAssertTrue(success)
+        }
+        
+        // url is correct
+        wait(for: [expect], timeout: 1.0)
     }
     
     func test_remove_a_jog_event() {
@@ -63,10 +76,17 @@ class APIServiceTests: XCTestCase {
 extension APIServiceTests {
     func initStubs(){
         
-        stub(condition: isPath( "/\(APIPath.jogEventForGeneralUser)") ) { (_) -> OHHTTPStubsResponse in
+        stub(condition: isMethodGET() && isPath( "/\(APIPath.jogEventForGeneralUser)") ) { (_) -> OHHTTPStubsResponse in
             let stubPath = OHPathForFile("jogEvent.json", type(of: self))
             return fixture(filePath: stubPath!, headers: ["Content-Type":"application/json"])
         }
+        
+        stub(condition: isMethodPOST() && isPath("/\(APIPath.jogEventAdd)")) { request -> OHHTTPStubsResponse in
+            return OHHTTPStubsResponse( jsonObject: ["name": "-Kv1qaWAp66vkZEdSuXq"],
+                                        statusCode: 200,
+                                        headers: [ "Content-Type": "application/json" ])
+        }
+        
     }
     
     func clearStubs() {
